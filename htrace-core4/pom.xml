@@ -14,11 +14,12 @@ language governing permissions and limitations under the License. -->
 
   <artifactId>htrace-core4</artifactId>
   <packaging>jar</packaging>
+  <version>4.2.1-incubating</version>
 
   <parent>
     <artifactId>htrace</artifactId>
     <groupId>org.apache.htrace</groupId>
-    <version>4.3.0-incubating-SNAPSHOT</version>
+    <version>4.2.0-incubating</version>
     <relativePath>..</relativePath>
   </parent>
 
@@ -27,6 +28,7 @@ language governing permissions and limitations under the License. -->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jackson.version>2.10.0</jackson.version>
   </properties>
 
   <build>
@@ -74,10 +76,6 @@ language governing permissions and limitations under the License. -->
         <artifactId>maven-jar-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.rat</groupId>
-        <artifactId>apache-rat-plugin</artifactId>
-      </plugin>
-      <plugin>
         <!-- explicitly define maven-deploy-plugin after other to force exec order -->
         <artifactId>maven-deploy-plugin</artifactId>
       </plugin>
@@ -94,10 +92,12 @@ language governing permissions and limitations under the License. -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
     </dependency>
     <!-- core specific deps. -->
     <dependency>
